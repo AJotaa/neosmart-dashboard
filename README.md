@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# NeoSmart Dashboard Prototype
+### To run local server
 
 ## Getting Started
 
-First, run the development server:
+To get started with NeoSmart Dashboard Prototype, follow these steps:
+
+## Step 1: Clone the repository to your local machine:
+First you need to clone the project from the repository, to do so in the terminal run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/AJotaa/neosmart-dashboard.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Step 2: Install dependencies using npm:
+Now is time to install the project dependencies.
+To do so run the following command from the _root_ of the project:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# using npm
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Step 3: Run the development server:
 
-## Learn More
+Open a new terminal from the _root_ folder. Run the following command to start your app:
+```bash
+npm run dev
+```
+this will star the mock server, start the app and open the http://localhost:3000 in the default browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Step 4: Accessing the Dashboard:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- After running the server, can enter http://localhost:3000 in the borwser to access the dashboard.
+- Additionally, a mock server is available on port 3001.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Step 5: Start using the application:
 
-## Deploy on Vercel
+- Once the server and mock server are running, navigate to the home in your browser. Click on the _"Get Started"_ button to begin using the application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+That's it! You're all set to explore the NeoSmart Dashboard Prototype.
