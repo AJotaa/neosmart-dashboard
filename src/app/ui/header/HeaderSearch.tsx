@@ -28,17 +28,16 @@ export function HeaderSearch({ icon }: HeaderSearchProps) {
     setFilters(e.target.value);
   }
 
-  const inputData = {
+  const inputData: React.InputHTMLAttributes<HTMLInputElement> = {
     type: "text",
     value: filters,
-    ref: inputRef,
     onChange: handleFilter,
   };
 
   return (
     <div>
       {showInput ? (
-        <BaseInput inputData={inputData} />
+        <BaseInput inputData={inputData} ref={inputRef} />
       ) : (
         <BaseButton mode="icon" clickEvent={() => setShowInput(true)}>
           {icon}

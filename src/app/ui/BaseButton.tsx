@@ -27,11 +27,12 @@ export function BaseButton({
   return (
     <>
       {link ? (
-        <Link href={link} className={`${btnStyle[mode]} transition-all`}>
+        <Link suppressHydrationWarning href={link} className={`${btnStyle[mode]} transition-all`}>
           {children}
         </Link>
       ) : (
         <button
+        suppressHydrationWarning
           className={`${btnStyle[mode]} transition-all`}
           onClick={clickEvent}
         >

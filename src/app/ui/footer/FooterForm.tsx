@@ -8,10 +8,10 @@ import { BaseCheckbox } from "../BaseCheckbox";
 
 export function FooterForm() {
   const email = useFields({ type: "email" });
-  const firstCheckbox = useCheckbox({ type: "checkbox" });
-  const secondCheckbox = useCheckbox({ type: "checkbox" });
+  const firstCheckbox = useCheckbox();
+  const secondCheckbox = useCheckbox();
 
-  function handleFornm(e) {
+  function handleFornm(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (firstCheckbox.value && secondCheckbox.value) {
       alert(`

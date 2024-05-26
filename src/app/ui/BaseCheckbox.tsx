@@ -5,7 +5,15 @@ import { global_icons } from "@/icons";
 
 const { checkboxIcon } = global_icons;
 
-export const BaseCheckbox = ({ label, id, action, inputData }) => {
+interface BaseCheckboxProps {
+  label?: string;
+  id?: string;
+  inputData?: {
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  };
+}
+
+export const BaseCheckbox = ({ label, id, inputData }: BaseCheckboxProps) => {
   const [checked, setChecked] = useState(false);
 
   const bgBaseClr = "bg-gray-300 dark:bg-white ring-transparent";
@@ -14,7 +22,6 @@ export const BaseCheckbox = ({ label, id, action, inputData }) => {
 
   function handleCheckbox() {
     setChecked(!checked);
-    action && action(!checked);
   }
 
   return (
@@ -30,8 +37,7 @@ export const BaseCheckbox = ({ label, id, action, inputData }) => {
         className="abosolute contents w-0 h-0"
         checked={checked}
         readOnly
-        {...inputData}
-        required
+        onChange={inputData?.onChange}
       />
       <span
         className={`${bgColor} flex items-center justify-center ring-1 min-w-5 aspect-square rounded-sm text-white group-hover:ring-amber-600`}

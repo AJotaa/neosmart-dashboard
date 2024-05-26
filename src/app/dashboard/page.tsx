@@ -52,17 +52,18 @@ const testData = {
     ],
   },
 };
+const URL = "http://localhost:3001/user";
 
 export default async function DashboardPage() {
-  // let data = null;
+  let data = null;
   // try {
-  //   const response = await fetch("http://localhost:3001/user");
+  //   const response = await fetch(URL);
   //   data = await response.json();
   // } catch (err) {
   //   throw err;
   // }
 
-  const data = testData.user;
+  data = testData.user;
 
   return (
     <main className="pt-16 w-full min-h-screen">

@@ -3,7 +3,29 @@ import { BaseButton } from "../BaseButton";
 import { FooterForm } from "./FooterForm";
 import { global_icons } from "@/icons";
 
-const regionData = [
+// Define types for the data structures
+interface RegionData {
+  region: string;
+  description: string;
+}
+
+interface FaqData {
+  link: string;
+  description: string;
+}
+
+interface TermsData {
+  link: string;
+  description: string;
+}
+
+interface SocialData {
+  link: string;
+  description: string;
+  icon: React.ReactNode; // Ensure icon is a React component
+}
+
+const regionData: RegionData[] = [
   {
     region: "EUROPE",
     description:
@@ -15,7 +37,7 @@ const regionData = [
   },
 ];
 
-const faqsData = [
+const faqsData: FaqData[] = [
   {
     link: "#",
     description: "Neoprompts",
@@ -26,7 +48,7 @@ const faqsData = [
   },
 ];
 
-const termsData = [
+const termsData: TermsData[] = [
   {
     link: "#",
     description: "Legal Policy",
@@ -41,29 +63,31 @@ const termsData = [
   },
 ];
 
-const socialData = [
+const socialData: SocialData[] = [
   {
     link: "#",
     description: "linkedin",
-    icon: "linkedinIcon",
+    icon: global_icons.linkedinIcon,
   },
   {
     link: "#",
     description: "instagram",
-    icon: "instagramIcon",
+    icon: global_icons.instagramIcon,
   },
   {
     link: "#",
     description: "twitter",
-    icon: "twitterIcon",
+    icon: global_icons.twitterIcon,
   },
 ];
 
 export function TheFooter() {
-  function footerList(arr) {
+  function footerList<T extends { link: string; description: string }>(
+    arr: T[]
+  ) {
     return arr.map((e, i) => (
       <li key={i + e.description} className="[&>*]:text-base 2xl:[&>*]:text-lg">
-        <BaseButton href={e.link} mode="flat">
+        <BaseButton link={e.link} mode="flat">
           {e.description}
         </BaseButton>
       </li>
@@ -71,9 +95,9 @@ export function TheFooter() {
   }
 
   return (
-    <footer className="bg-white lg:pl-60 dark:bg-gradient-to-r from-[#151D30] via-[#151D30] to-slate-600 2xl:text-lg transition-all">
-      <div className="m-auto p-10 xl:gap-3 max-w-[90vw] xl:max-w-[1100px]">
-        <div className="mx-auto mb-6 min-w-[200px] invert dark:invert-0 xl:mb-16">
+    <footer className="bg-white p-12 lg:pl-60 dark:bg-gradient-to-r from-[#151D30] via-[#151D30] to-slate-600 2xl:text-lg transition-all">
+      <div className="m-auto xl:gap-3 max-w-[90vw] xl:max-w-[1100px]">
+        <div className="mx-auto mb-6 min-w-[200px] invert dark:invert-0 xl:mb-8">
           <Image
             src="/Neoprompts.png"
             alt=""
@@ -104,15 +128,15 @@ export function TheFooter() {
               <ul className="flex gap-6 mt-4">
                 {socialData.map((e, i) => (
                   <li key={i + e.description}>
-                    <BaseButton href={e.link} mode="flat">
-                      {global_icons[e.icon]}
+                    <BaseButton link={e.link} mode="flat">
+                      {e.icon}
                     </BaseButton>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-          <div className="max-w-[700px] w-full xl:w-60">
+          <div className="max-w-[700px] w-full xl:w-1/4">
             <FooterForm />
           </div>
         </div>

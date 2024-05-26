@@ -5,7 +5,12 @@ import { global_icons } from "@/icons";
 
 const { arrowIcon, componentIcon } = global_icons;
 
-export function BaseDropdown({ title = "", children }) {
+interface BaseDropdowmProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+export function BaseDropdown({ title = "", children }: BaseDropdowmProps) {
   const [showContent, setShowContent] = useState(false);
 
   function handleShow() {
