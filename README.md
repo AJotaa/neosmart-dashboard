@@ -1,4 +1,3 @@
-
 # NeoSmart Dashboard Prototype
 ### To run local server
 
@@ -28,15 +27,15 @@ Open a new terminal from the _root_ folder. Run the following command to start y
 ```bash
 npm run dev
 ```
-this will star the mock server, start the app and open the http://localhost:3000 in the default browser.
+this will star the mock server, start the app and open the `http://localhost:3000` in the default browser.
 
 ## Step 4: Accessing the Dashboard:
 
 - After running the server, can enter http://localhost:3000 in the borwser to access the dashboard.
-- Additionally, a mock server is available on port 3001.
+- Additionally, a mock server is available on port `3001`.
 
 ## Step 5: Start using the application:
 
-- Once the server and mock server are running, navigate to the home in your browser. Click on the _"Get Started"_ button to begin using the application.
+Once the server and mock server are running, navigate to the home in your browser. Click on the _"Get Started"_ button to begin using the application.
 
-That's it! You're all set to explore the NeoSmart Dashboard Prototype.
+That's it! You're all set to explore the NeoSmart Dashboard Prototype. You can try the dark mode toggle, the search bar filter, the form, the dropdown, and the responsive behavior.
