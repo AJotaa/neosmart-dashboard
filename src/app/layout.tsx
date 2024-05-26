@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Open_Sans } from "next/font/google";
 import "./globals.css";
+import { TheHeader } from "./ui/header/TheHeader";
+import { TheFooter } from "./ui/footer/TheFooter";
+import { FilterProvider } from "../utilities/context/FilterContext";
 
-const inter = Inter({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +18,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="dark">
+      <body
+        className={`${openSans.className} bg-gray-300 text-[#353E58] dark:bg-[#2C3445] dark:text-white transition-all`}
+      >
+        <FilterProvider>
+          <TheHeader />
+          {children}
+          <TheFooter />
+        </FilterProvider>
+      </body>
     </html>
   );
 }

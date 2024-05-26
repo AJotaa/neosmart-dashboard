@@ -1,0 +1,51 @@
+{
+  "user": {
+    "name": "Peter",
+    "categories": [
+      {
+        "id": 0,
+        "name": "Legal",
+        "cost": null,
+        "slug": "legal",
+        "image_path": "legal.png",
+        "options": ["Criminal Defence", "Envairomental Law", "Civil Law"]
+      },
+      {
+        "id": 1,
+        "name": "Startups",
+        "cost": null,
+        "slug": "startups",
+        "image_path": "startups.png",
+        "options": [
+          "Recruiting",
+          "Compensation & Benefits",
+          "Performance Management"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Marketing",
+        "cost": null,
+        "slug": "marketing",
+        "image_path": "marketing.png",
+        "options": [
+          "Content Marketing",
+          "Digital Marketing Strategies",
+          "Social Media and Community Management"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "People",
+        "cost": null,
+        "slug": "people",
+        "image_path": "people.png",
+        "options": [
+          "Idea Generation and Validation",
+          "Naming and Branding",
+          "Market Research"
+        ]
+      }
+    ]
+  }
+}
