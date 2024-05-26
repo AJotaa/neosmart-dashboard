@@ -7,12 +7,14 @@ import { BaseInput } from "../BaseInput";
 import { BaseCheckbox } from "../BaseCheckbox";
 
 export function FooterForm() {
+  // Initialize form fields and checkbox states using custom hooks
   const email = useFields({ type: "email" });
   const firstCheckbox = useCheckbox();
   const secondCheckbox = useCheckbox();
 
   function handleFornm(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission behavior
+    // Check if both checkboxes are checked
     if (firstCheckbox.value && secondCheckbox.value) {
       alert(`
       Email: ${email.value},
@@ -34,7 +36,6 @@ export function FooterForm() {
           <label htmlFor="email" className="mb-2">
             Email Address <span className="text-red-500">*</span>
           </label>
-
           <BaseInput inputData={email} id="email" required />
         </div>
         <BaseCheckbox

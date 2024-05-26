@@ -9,5 +9,5 @@ export const useCheckbox = () => {
     setValue((prev) => !prev);
   }
 
-  return { value, onChange };
+  return { value, onChange }; // Return the current checkbox value and the onChange function
 };

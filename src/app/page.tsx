@@ -2,6 +2,7 @@ import Image from "next/image";
 import { BaseButton } from "./ui/BaseButton";
 import cover_image from "../../public/Neoprompts.png";
 
+// Home page component
 export default function Home() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-gray-500 dark:bg-[#212D4D]">

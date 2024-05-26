@@ -13,6 +13,7 @@ interface BaseDropdowmProps {
 export function BaseDropdown({ title = "", children }: BaseDropdowmProps) {
   const [showContent, setShowContent] = useState(false);
 
+  // Function to handle toggling content visibility
   function handleShow() {
     setShowContent((prev) => !prev);
   }
@@ -26,6 +27,7 @@ export function BaseDropdown({ title = "", children }: BaseDropdowmProps) {
           className="flex justify-between items-center w-full text-sm cursor-pointer p-1 hover:text-[#C21BCC]"
         >
           <span className="">{title}</span>
+          {/* Render arrow icon with rotation based on content visibility */}
           <span
             className="transition-all block"
             style={{ transform: showContent ? "rotate(-180deg)" : "" }}

@@ -25,6 +25,7 @@ interface SocialData {
   icon: React.ReactNode; // Ensure icon is a React component
 }
 
+// Define data for different sections of the footer
 const regionData: RegionData[] = [
   {
     region: "EUROPE",
@@ -82,6 +83,7 @@ const socialData: SocialData[] = [
 ];
 
 export function TheFooter() {
+  // Utility function to generate lists of footer items
   function footerList<T extends { link: string; description: string }>(
     arr: T[]
   ) {

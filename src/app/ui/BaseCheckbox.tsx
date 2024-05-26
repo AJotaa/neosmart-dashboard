@@ -18,6 +18,7 @@ export const BaseCheckbox = ({ label, id, inputData }: BaseCheckboxProps) => {
 
   const bgBaseClr = "bg-gray-300 dark:bg-white ring-transparent";
 
+  // Background color based on checkbox status
   const bgColor = !checked ? bgBaseClr : "bg-[#FF901F]";
 
   function handleCheckbox() {
@@ -30,6 +31,7 @@ export const BaseCheckbox = ({ label, id, inputData }: BaseCheckboxProps) => {
       className="group flex items-center gap-3 relative cursor-pointer"
       onChange={handleCheckbox}
     >
+      {/* Render checkbox input readonly */}
       <input
         type="checkbox"
         id={id}
@@ -39,6 +41,7 @@ export const BaseCheckbox = ({ label, id, inputData }: BaseCheckboxProps) => {
         readOnly
         onChange={inputData?.onChange}
       />
+      {/* Render checkbox indicator */}
       <span
         className={`${bgColor} flex items-center justify-center ring-1 min-w-5 aspect-square rounded-sm text-white group-hover:ring-amber-600`}
       >

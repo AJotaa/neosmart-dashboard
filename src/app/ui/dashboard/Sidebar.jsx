@@ -44,16 +44,19 @@ const extraLinks = [
 export function Sidebar() {
   const [show, setShow] = useState(false);
 
+  // Determine the translation value for showing/hiding the sidebar
   const isShow = show ? "translate-x-0" : "-translate-x-full";
+  // Determine the rotation of the arrow icon based on the sidebar visibility
+  const arrowDirection = !show ? "rotate-[270deg]" : "rotate-90";
 
+  // Function to toggle the visibility of the sidebar
   function handleShow() {
     setShow((prev) => !prev);
   }
 
-  const arrowDirection = !show ? "rotate-[270deg]" : "rotate-90";
-
   return (
     <>
+      {/* Sidebar container */}
       <div
         className={`${isShow} fixed z-20 lg:z-0 lg:relative lg:translate-x-0 min-h-screen top-0 bottom-0 bg-white pt-16 text-left px-6 dark:bg-[#151D30] lg:px-8 2xl:px-10 transition-all`}
       >
@@ -68,6 +71,7 @@ export function Sidebar() {
             </span>
           ))}
         </nav>
+        {/* Toggle button for mobile view */}
         <div
           className={`${arrowDirection} transition-all duration-500 lg:hidden right-[-20%] absolute top-0 h-20 flex items-center justify-center`}
         >
@@ -76,6 +80,7 @@ export function Sidebar() {
           </BaseButton>
         </div>
       </div>
+      {/* Overlay for mobile view */}
       {show && (
         <div
           className="fixed h-screen w-screen top-0 left-0 z-10 bg-black opacity-40 lg:hidden"

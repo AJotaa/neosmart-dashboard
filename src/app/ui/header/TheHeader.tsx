@@ -11,13 +11,14 @@ const { searchIcon, notificationIcon, modeIcon } = global_icons;
 
 export function TheHeader() {
   const pathname = usePathname();
-  const { handleDarkMode } = useDarkMode();
+  const { handleDarkMode } = useDarkMode(); // Get handleDarkMode function from useDarkMode hook
 
   return (
     <header className="flex justify-end fixed top-0 left-0 w-full z-10 2xl:h-20 bg-white dark:bg-[#151D30] transition-all">
       <div className="py-5 px-16 2xl:py-6 2xl:px-20">
         <ul className="flex items-center gap-4 md:gap-6">
           {pathname !== "/" && (
+            // Conditionally render search and notification icons if not on homepage
             <>
               <li>
                 <HeaderSearch icon={searchIcon} />

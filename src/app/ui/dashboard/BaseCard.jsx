@@ -2,9 +2,10 @@ import Image from "next/image";
 import { BaseButton } from "../BaseButton";
 import { global_icons } from "@/icons";
 
-const basePath = "/categories/";
+const basePath = "/categories/"; // Base path for category images
 
 export function BaseCard({ data }) {
+  // Destructure data object to access category information
   const { slug, name, image_path } = data;
 
   return (

@@ -14,9 +14,10 @@ interface BtnStylesType {
 export function BaseButton({
   children,
   link,
-  mode = "primary",
+  mode = "primary", // Button mode (default is primary)
   clickEvent,
 }: ButtonProps) {
+  // Define button styles based on mode
   const btnStyle: BtnStylesType = {
     primary:
       "min-w-[120px] px-2 py-1 bg-[#FF901F] text-white rounded inherit block text-center text-sm 2xl:text-base hover:bg-gradient-to-r from-[#F222FF] to-[#FF901F]",
@@ -27,12 +28,18 @@ export function BaseButton({
   return (
     <>
       {link ? (
-        <Link suppressHydrationWarning href={link} className={`${btnStyle[mode]} transition-all`}>
+        // render a Link component if a link is provided
+        <Link
+          suppressHydrationWarning
+          href={link}
+          className={`${btnStyle[mode]} transition-all`}
+        >
           {children}
         </Link>
       ) : (
+        // else render a button element
         <button
-        suppressHydrationWarning
+          suppressHydrationWarning
           className={`${btnStyle[mode]} transition-all`}
           onClick={clickEvent}
         >

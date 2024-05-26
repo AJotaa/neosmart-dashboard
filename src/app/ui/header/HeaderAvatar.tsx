@@ -8,6 +8,7 @@ interface HeaderAvatarProps {
 }
 
 export function HeaderAvatar({ pathname }: HeaderAvatarProps) {
+  // Conditional rendering based on pathname
   return (
     <>
       {pathname === "/" ? (

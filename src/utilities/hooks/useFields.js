@@ -9,5 +9,6 @@ export const useFields = ({ type }) => {
     setValue(e.target.value);
   }
 
+  // Return an object containing the field value, type, and onChange handler
   return { value, type, onChange };
 };

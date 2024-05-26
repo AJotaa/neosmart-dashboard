@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useDarkMode = () => {
+  // Initialize state for dark mode
   const [isDarkMode, setIsDarkMode] = useState(() => {
     // cheks the local storage value
     if (typeof window !== "undefined") {
@@ -12,6 +13,7 @@ export const useDarkMode = () => {
 
   useEffect(() => {
     const html = document.documentElement;
+    // Update dark mode class based on state
     if (isDarkMode) {
       html.classList.add("dark");
       localStorage.setItem("darkMode", "true");
@@ -19,7 +21,7 @@ export const useDarkMode = () => {
       html.classList.remove("dark");
       localStorage.setItem("darkMode", "false");
     }
-  }, [isDarkMode]);
+  }, [isDarkMode]); // Run effect whenever isDarkMode changes
 
   // handler of the mode toggler
   const handleDarkMode = () => {

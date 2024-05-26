@@ -52,11 +52,14 @@ const testData = {
     ],
   },
 };
+
+// Define the URL for fetching mock data
 const URL = "http://localhost:3001/user";
 
 export default async function DashboardPage() {
-  let data = null;
+  let data = null; // Initialize data variable
   // try {
+  // Fetch data from the json server
   //   const response = await fetch(URL);
   //   data = await response.json();
   // } catch (err) {
